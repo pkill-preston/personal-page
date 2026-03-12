@@ -57,4 +57,8 @@ The easiest way to deploy is via Vercel:
 https://vercel.com
 
 Next.js deployment documentation:
+<<<<<<< HEAD
 https://nextjs.org/docs/app/building-your-application/deploying
+=======
+https://nextjs.org/docs/app/building-your-application/deploying
+>>>>>>> main
