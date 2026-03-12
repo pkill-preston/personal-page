@@ -1,6 +1,6 @@
 # Heron Lorena — Portfolio
 
-Minimal, modern portfolio built with **Next.js (App Router)** to showcase About, Projects, Stack, and Experience in a clean, grid-based layout with strong visual hierarchy, rounded containers, subtle shadows, and typography-driven structure.
+Minimal, modern portfolio built with **Next.js (App Router)** to showcase About, Projects, Stack in a clean, grid-based layout with strong visual hierarchy, rounded containers, subtle shadows, and typography-driven structure.
 
 ---
 
