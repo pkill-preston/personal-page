@@ -12,7 +12,6 @@ export async function getRepos() {
 			Authorization: `Bearer ${process.env.GITHUB_KEY}`,
 			"X-GitHub-Api-Version": "2022-11-28"
 		},
-		next: {revalidate: 3600}
 	});
 
 	if (!res.ok) {

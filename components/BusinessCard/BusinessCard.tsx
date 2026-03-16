@@ -1,8 +1,6 @@
 "use client"
 
 import {useEffect, useState} from "react";
-import {Button} from "../ui/button";
-import {UserCheckIcon} from "@phosphor-icons/react";
 
 export const BusinessCard = () => {
 	const [isFlipped, setIsFlipped] = useState(false);
@@ -27,7 +25,7 @@ export const BusinessCard = () => {
 			>
 				{/* Front */}
 				<div
-					className='absolute card-interactive bg-card overflow-hidden w-full h-full backface-hidden rounded-lg p-4 border flex flex-col items-center justify-around'
+					className='absolute card-interactive bg-card border-1 rounded-lg card-new transition-all duration-300 overflow-hidden w-full h-full backface-hidden rounded-lg p-4 border flex flex-col items-center justify-around'
 					style={{backfaceVisibility: "hidden"}}
 				>
 					<h1
@@ -42,7 +40,7 @@ export const BusinessCard = () => {
 				</div>
 
 				<div
-					className='absolute card-interactive bg-card overflow-hidden w-full h-full backface-hidden rounded-lg border flex flex-col justify-around items-center p-6'
+					className='absolute card-interactive bg-card border-1 rounded-lg card-new transition-all duration-300 overflow-hidden w-full h-full backface-hidden rounded-lg border flex flex-col justify-around items-center p-6'
 					style={{
 						backfaceVisibility: "hidden",
 						transform: "rotateY(180deg)"

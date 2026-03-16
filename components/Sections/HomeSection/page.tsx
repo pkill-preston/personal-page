@@ -27,7 +27,7 @@ const HomeSection = () => {
 							})
 						}
 						className='md:w-[30%] lg:w-auto w-[45%] p-6 rounded-lg bg-blue-500 text-white font-medium
-transition-all duration-300
+transition-all duration-300 cursor-pointer
 hover:-translate-y-1 hover:shadow-xl hover:bg-blue-400'
 						size='lg'
 					>
@@ -35,10 +35,7 @@ hover:-translate-y-1 hover:shadow-xl hover:bg-blue-400'
 						<ArrowDownIcon size={32} />
 					</Button>
 					<Button
-						className='md:w-[30%] lg:w-auto w-[45%] p-6 rounded-lg border border-white/15
-text-white/80
-transition-all duration-300
-hover:-translate-y-1 hover:bg-white/5 hover:border-white/30 '
+						className='md:w-[30%] lg:w-auto w-[45%] p-6 rounded-lg bg-card border-1 rounded-lg card-new transition-all duration-300 '
 						size='lg'
 						variant={"outline"}
 					>

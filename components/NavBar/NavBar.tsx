@@ -55,7 +55,10 @@ const NavBar = () => {
 				>
 					<div className='flex items-center justify-between p-4'>
 						<div>
-							<p onClick={() => scrollTo(0)} className='text-lg cursor-pointer'>
+							<p
+								onClick={() => scrollTo(0)}
+								className='text-lg cursor-pointer hover:text-[#7FBBFF]'
+							>
 								Heron
 							</p>
 						</div>
@@ -78,25 +81,25 @@ const NavBar = () => {
 									<div className='flex gap-6 items-center'>
 										<p
 											onClick={() => scrollTo("#home")}
-											className='text-lg hover:text-[#1447e6] cursor-pointer'
+											className='text-lg hover:text-[#7FBBFF] cursor-pointer'
 										>
 											Home
 										</p>
 										<p
-											onClick={() => scrollTo("#about")}
-											className='text-lg hover:text-[#1447e6] cursor-pointer'
+											onClick={() => scrollTo("#about", {offset: -90})}
+											className='text-lg hover:text-[#7FBBFF] cursor-pointer'
 										>
 											About
 										</p>
 										<p
-											onClick={() => scrollTo("#projects")}
-											className='text-lg hover:text-[#1447e6] cursor-pointer'
+											onClick={() => scrollTo("#projects", {offset: -90})}
+											className='text-lg hover:text-[#7FBBFF] cursor-pointer'
 										>
 											Projects
 										</p>
 										<p
 											onClick={() => scrollTo("#contact")}
-											className='text-lg hover:text-[#1447e6] cursor-pointer'
+											className='text-lg hover:text-[#7FBBFF] cursor-pointer'
 										>
 											Contact
 										</p>
@@ -157,7 +160,7 @@ const NavBar = () => {
 							data-scroll-to
 							onClick={() => {
 								setIsOpen(false);
-								scrollTo("#projects");
+								scrollTo("#projects", {offset: -90});
 							}}
 							className='relative bg-card overflow-hidden w-[calc(48%-8px)] h-24 border rounded-lg flex flex-col justify-center items-center transition-all duration-300 cursor-pointer'
 						>

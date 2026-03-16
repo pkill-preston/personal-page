@@ -2,6 +2,7 @@ import HomeSection from "@/components/Sections/HomeSection/page";
 import AboutSection from "@/components/Sections/AboutSection/page";
 import ProjectsSection from "@/components/Sections/ProjectsSection/page";
 import LocomotiveWrapper from "@/components/LocomotiveWrapper/LocomotiveWrapper";
+import ContactSection from "@/components/Sections/ContactSection/page";
 
 export default function Page() {
 	return (
@@ -17,6 +18,9 @@ export default function Page() {
 					</section>
 					<section id='projects' data-scroll-section>
 						<ProjectsSection />
+					</section>
+					<section id='contact' data-scroll-section>
+						<ContactSection />
 					</section>
 				</div>
 			</div>

@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar/NavBar";
 import {ThemeProvider} from "@/components/ThemeProvider";
 
 import {Gabarito,JetBrains_Mono, Libre_Caslon_Text} from "next/font/google";
+import FooterComponent from "@/components/FooterComponent/FooterComponent";
 
 const gabarito = Gabarito({
 	variable: "--font-sans"
@@ -44,6 +45,7 @@ export default function RootLayout({
 				>
 					<NavBar />
 					{children}
+					<FooterComponent/>
 				</ThemeProvider>
 			</body>
 		</html>

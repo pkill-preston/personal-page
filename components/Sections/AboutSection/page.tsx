@@ -17,7 +17,7 @@ const AboutSection = () => {
 				</p>
 			</div>
 			<div className='flex justify-between'>
-				<div className='relative bg-card card-interactive flex flex-col gap-4 w-[calc(50%-8px)] items-center p-8 overflow-hidden border rounded-lg'>
+				<div className='relative flex flex-col gap-4 w-[calc(50%-8px)] items-center p-8 overflow-hidden bg-card border-1 rounded-lg card-new transition-all duration-300'>
 					<p className='text-lg font-bold'>Languages</p>
 					<div className='flex w-full items-center flex-col '>
 						<div className='flex gap-2'>
@@ -40,7 +40,7 @@ const AboutSection = () => {
 						</div>
 					</div>
 				</div>
-				<div className='relative bg-card card-interactive flex flex-col gap-1 justify-center w-[calc(50%-8px)] items-center border rounded-lg p-8 '>
+				<div className='relative flex flex-col gap-1 justify-center w-[calc(50%-8px)] items-center p-8 bg-card border-1 rounded-lg card-new transition-all duration-300'>
 					<p className='text-3xl font-bold text-center'>Open to work</p>
 				</div>
 			</div>

@@ -210,4 +210,16 @@
            hover:bg-blue-200/20
            hover:shadow-xl;
   }
+
+  .card-new{
+    background-color: var(--card);
+    transition: border-color .3s, transform .3s, box-shadow .3s;
+    overflow: hidden;
+  }
+
+  .card-new:hover {
+        border-color: var(--ring);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px var(--color-primary);
+    }
 }

@@ -20,7 +20,7 @@ const BadgesCard = ({items, icon, title}: Props) => {
 	const Icon = icons[icon];
 
 	return (
-		<div className='card-interactive bg-card overflow-hidden flex gap-2 flex-col border rounded-lg sm:w-[calc(25%-8px)] md:w-[calc(20%-8px)] lg:w-[calc(17.5%-8px)] xl:w-[calc(15%-8px)] w-[100%] p-4 transition-all duration-300'>
+		<div className='card-interactive overflow-hidden flex gap-2 flex-col bg-card border-1 rounded-lg card-new transition-all duration-300 sm:w-[calc(25%-8px)] md:w-[calc(20%-8px)] lg:w-[calc(17.5%-8px)] xl:w-[calc(15%-8px)] w-[100%] p-4 transition-all duration-300'>
 			<div className='flex gap-2 items-center'>
 				<Icon size={32} />
 				<p className='text-center font-bold'>{title}</p>
