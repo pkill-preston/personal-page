@@ -5,7 +5,9 @@
         "projects": "Projects",
         "contact": "Contact"
     },
-    "selectLanguage": "Select your language",
+    "languageSelector": {
+        "selectLanguage": "Select your language"
+    },
     "hero": {
         "im": "I'm",
         "name": "Heron",

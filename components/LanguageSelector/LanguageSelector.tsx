@@ -1,3 +1,5 @@
+"use client"
+
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -7,7 +9,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {GlobeIcon} from "@phosphor-icons/react";
 import {useRouter} from "next/navigation";
-import {useLocale} from "next-intl";
+import {useLocale, useTranslations} from "next-intl";
 
 const languages = [
 	{flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", code: "en", label: "English"},
@@ -16,6 +18,9 @@ const languages = [
 ];
 
 const LanguageSelector = () => {
+
+	const t = useTranslations("languageSelector");
+
 	const router = useRouter();
 	const locale = useLocale();
 
@@ -37,7 +42,7 @@ const LanguageSelector = () => {
 			<DropdownMenuContent className='flex w-40'>
 				<DropdownMenuGroup className='flex w-40 p-2 flex-col'>
 					<DropdownMenuLabel className='flex justify-center'>
-						Select your language
+						{t("selectLanguage")}
 					</DropdownMenuLabel>
 					<div className="flex flex-col gap-2">
 						{languages.map((item, index) => {
