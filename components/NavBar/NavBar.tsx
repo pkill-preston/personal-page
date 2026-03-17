@@ -12,6 +12,8 @@ import {
 } from "@phosphor-icons/react";
 import {ThemeToggler} from "../ThemeToggler/ThemeToggler";
 import {scrollTo} from "@/lib/scroll";
+import { useTranslations } from "next-intl";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
 
 export function useIsMobile() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -27,7 +29,9 @@ export function useIsMobile() {
 }
 
 const NavBar = () => {
+	const t = useTranslations("nav");
 	const isMobile = useIsMobile();
+
 	const [isOpen, setIsOpen] = useState(false);
 	const [scrolled, setScrolled] = useState(false);
 
@@ -66,7 +70,9 @@ const NavBar = () => {
 						<div className='flex items-center gap-4'>
 							{isMobile ? (
 								<>
+									<LanguageSelector />
 									<ThemeToggler />
+
 									<Button
 										variant='outline'
 										size='icon'
@@ -83,28 +89,32 @@ const NavBar = () => {
 											onClick={() => scrollTo("#home")}
 											className='text-lg hover:text-[#7FBBFF] cursor-pointer'
 										>
-											Home
+											{t("home")}
 										</p>
+
 										<p
 											onClick={() => scrollTo("#about", {offset: -90})}
 											className='text-lg hover:text-[#7FBBFF] cursor-pointer'
 										>
-											About
+											{t("about")}
 										</p>
+
 										<p
 											onClick={() => scrollTo("#projects", {offset: -90})}
 											className='text-lg hover:text-[#7FBBFF] cursor-pointer'
 										>
-											Projects
+											{t("projects")}
 										</p>
+
 										<p
 											onClick={() => scrollTo("#contact")}
 											className='text-lg hover:text-[#7FBBFF] cursor-pointer'
 										>
-											Contact
+											{t("contact")}
 										</p>
 									</div>
 
+									<LanguageSelector />
 									<ThemeToggler />
 								</>
 							)}
@@ -137,35 +147,32 @@ const NavBar = () => {
 								setIsOpen(false);
 								scrollTo(0);
 							}}
-							data-scroll-to
-							className='relative bg-card overflow-hidden w-[calc(48%-8px)] h-24 border rounded-lg flex flex-col justify-center items-center transition-all duration-300 cursor-pointer'
+							className='w-[calc(48%-8px)] h-24 border rounded-lg flex flex-col justify-center items-center cursor-pointer transition-all duration-300'
 						>
 							<HouseIcon size={32} />
-							<p>Home</p>
+							<p>{t("home")}</p>
 						</div>
 
 						<div
-							data-scroll-to
 							onClick={() => {
 								setIsOpen(false);
 								scrollTo("#about", {offset: -90});
 							}}
-							className='relative bg-card overflow-hidden w-[calc(48%-8px)] h-24 border rounded-lg flex flex-col justify-center items-center transition-all duration-300 cursor-pointer'
+							className='w-[calc(48%-8px)] h-24 border rounded-lg flex flex-col justify-center items-center cursor-pointer transition-all duration-300'
 						>
 							<IdentificationCardIcon size={32} />
-							<p className=''>About</p>
+							<p>{t("about")}</p>
 						</div>
 
 						<div
-							data-scroll-to
 							onClick={() => {
 								setIsOpen(false);
 								scrollTo("#projects", {offset: -90});
 							}}
-							className='relative bg-card overflow-hidden w-[calc(48%-8px)] h-24 border rounded-lg flex flex-col justify-center items-center transition-all duration-300 cursor-pointer'
+							className='w-[calc(48%-8px)] h-24 border rounded-lg flex flex-col justify-center items-center cursor-pointer transition-all duration-300'
 						>
 							<CodeIcon size={32} />
-							<p>Projects</p>
+							<p>{t("projects")}</p>
 						</div>
 
 						<div
@@ -173,10 +180,10 @@ const NavBar = () => {
 								setIsOpen(false);
 								scrollTo("#contact");
 							}}
-							className='relative bg-card overflow-hidden w-[calc(48%-8px)] h-24 border rounded-lg flex flex-col justify-center items-center transition-all duration-300 cursor-pointer'
+							className='w-[calc(48%-8px)] h-24 border rounded-lg flex flex-col justify-center items-center cursor-pointer transition-all duration-300'
 						>
 							<EnvelopeIcon size={32} />
-							<p>Contact</p>
+							<p>{t("contact")}</p>
 						</div>
 					</div>
 				</div>

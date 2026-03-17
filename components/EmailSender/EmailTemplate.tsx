@@ -35,9 +35,6 @@ export default function ContactEmail({
 						<Text>
 							<strong>From:</strong> {sender}
 						</Text>
-						<Text>
-							<strong>Subject:</strong> {subject}
-						</Text>
 					</Section>
 
 					<Section style={{marginTop: "16px"}}>

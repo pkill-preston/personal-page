@@ -1,0 +1,125 @@
+{
+    "nav": {
+        "home": "Início",
+        "about": "Sobre",
+        "projects": "Projetos",
+        "contact": "Contato"
+    },
+    "selectLanguage": "Selecione seu idioma",
+    "hero": {
+        "im": "Me chamo",
+        "name": "Heron",
+        "role": "Desenvolvedor Web",
+        "description1": "Desenvolvendo software de alta qualidade e fácil manutenção",
+        "description2": "do front ao back.",
+        "aboutButton": "Sobre",
+        "contactButton": "Contato"
+    },
+    "developer": {
+        "name": "Heron",
+        "role": "Desenvolvedor Full-Stack",
+        "location": "Brasil",
+        "experience": "Mais de 2 anos",
+        "availability": "Aberto a oportunidades",
+        "techStack": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "databases": "Bancos de dados",
+            "tools": "Ferramentas"
+        },
+        "softSkills": "Habilidades interpessoais",
+        "frontendItems": [
+            "Vue",
+            "Angular",
+            "React",
+            "TypeScript",
+            "TailwindCSS"
+        ],
+        "backendItems": [
+            "Node.js",
+            "Express"
+        ],
+        "databasesItems": [
+            "PostgreSQL",
+            "MongoDB"
+        ],
+        "toolsItems": [
+            "Git",
+            "Docker",
+            "Linux"
+        ],
+        "softSkillsItems": [
+            "Resolução de problemas",
+            "Comunicação clara",
+            "Adaptabilidade"
+        ]
+    },
+    "about": {
+        "description": "Desenvolvedor web criando aplicações escaláveis e focadas em performance, expandindo do frontend para sistemas web completos.",
+        "languages": {
+            "title": "Idiomas",
+            "portuguese": "Português",
+            "portugueseLevel": "Nativo",
+            "english": "Inglês",
+            "englishLevel": "B2",
+            "spanish": "Espanhol",
+            "spanishLevel": "A2"
+        },
+        "openToWork": "Aberto a oportunidades",
+        "frontend": {
+            "title": "Frontend",
+            "items": [
+                "Bibliotecas de UI",
+                "SSR",
+                "Tailwind",
+                "Design System"
+            ]
+        },
+        "tools": {
+            "title": "Ferramentas",
+            "items": [
+                "Linux",
+                "Scrum",
+                "Git",
+                "Ágil"
+            ]
+        }
+    },
+    "languages": {
+        "title": "Idiomas",
+        "portuguese": "Português",
+        "portugueseLevel": "Nativo",
+        "english": "Inglês",
+        "englishLevel": "B2",
+        "spanish": "Espanhol",
+        "spanishLevel": "A2"
+    },
+    "openToWork": "Aberto a oportunidades",
+    "projects": {
+        "title": "Projetos",
+        "livePreview": "Ver projeto",
+        "noPreview": "Pré-visualização indisponível"
+    },
+    "contact": {
+        "title": "Vamos Conectar",
+        "intro": "Estou ativamente buscando oportunidades como desenvolvedor. Se meu trabalho combinar com sua equipe, sinta-se à vontade para entrar em contato.",
+        "infoTitle": "Informações de Contato",
+        "email": "heron.lorena@protonmail.com",
+        "phone": "+55 (12) 99664-7366",
+        "location": "Brasil, São Paulo"
+    },
+    "footer": {
+        "copyright": "© {year} Heron Lorena. Todos os direitos reservados."
+    },
+    "ContactForm": {
+        "emailLabel": "Email",
+        "emailPlaceholder": "Seu email",
+        "subjectLabel": "Assunto",
+        "subjectPlaceholder": "Assunto",
+        "messageLabel": "Mensagem",
+        "messagePlaceholder": "Mensagem",
+        "submit": "Enviar mensagem",
+        "sending": "Enviando...",
+        "success": "Mensagem enviada com sucesso."
+    }
+}

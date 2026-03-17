@@ -1,12 +1,16 @@
 "use client";
 
 import {useState} from "react";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
-import { Label } from "../ui/label";
-import { Button } from "../ui/button";
+import {useTranslations} from "next-intl";
+
+import {Input} from "../ui/input";
+import {Textarea} from "../ui/textarea";
+import {Label} from "../ui/label";
+import {Button} from "../ui/button";
 
 export default function ContactForm() {
+	const t = useTranslations("ContactForm");
+
 	const [loading, setLoading] = useState(false);
 	const [sent, setSent] = useState(false);
 
@@ -34,7 +38,7 @@ export default function ContactForm() {
 	}
 
 	if (sent) {
-		return <p className='text-lg'>Message sent successfully.</p>;
+		return <p className='text-lg'>{t("success")}</p>;
 	}
 
 	return (
@@ -42,37 +46,39 @@ export default function ContactForm() {
 			onSubmit={handleSubmit}
 			className='flex flex-col justify-between gap-6 w-full'
 		>
-			<div className="flex flex-col gap-2">
-				<Label>Email</Label>
+			<div className='flex flex-col gap-2'>
+				<Label>{t("emailLabel")}</Label>
 				<Input
 					name='email'
 					type='email'
-					placeholder='Your email'
+					placeholder={t("emailPlaceholder")}
 					required
 					className='border p-2 rounded-lg'
 				/>
 			</div>
-			<div className="flex flex-col gap-2">
-				<Label>Subject</Label>
+
+			<div className='flex flex-col gap-2'>
+				<Label>{t("subjectLabel")}</Label>
 				<Input
 					name='subject'
-					placeholder='Subject'
+					placeholder={t("subjectPlaceholder")}
 					required
 					className='border p-2 rounded-lg'
 				/>
 			</div>
-			<div className="flex flex-col gap-2">
-				<Label>Message</Label>
+
+			<div className='flex flex-col gap-2'>
+				<Label>{t("messageLabel")}</Label>
 				<Textarea
 					name='message'
-					placeholder='Message'
+					placeholder={t("messagePlaceholder")}
 					required
 					className='border p-2 rounded-lg h-full'
 				/>
 			</div>
 
 			<Button type='submit' className='text-white p-2 rounded-lg'>
-				{loading ? "Sending..." : "Send Message"}
+				{loading ? t("sending") : t("submit")}
 			</Button>
 		</form>
 	);

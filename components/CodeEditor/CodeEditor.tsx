@@ -1,6 +1,16 @@
 "use client";
 
+import {useTranslations} from "next-intl";
+
 const CodeEditor = () => {
+	const t = useTranslations("developer");
+
+	const frontend = t.raw("frontendItems") as string[];
+	const backend = t.raw("backendItems") as string[];
+	const databases = t.raw("databasesItems") as string[];
+	const tools = t.raw("toolsItems") as string[];
+	const softSkills = t.raw("softSkillsItems") as string[];
+
 	const codeLines = [
 		{
 			num: 1,
@@ -10,32 +20,27 @@ const CodeEditor = () => {
 		},
 		{
 			num: 2,
-			content:
-				'<span class="token-property">name</span><span class="token-equals"> = </span> <span class="token-string">"Heron"</span><span class="text-foreground">;</span>',
+			content: `<span class="token-property">name</span><span class="token-equals"> = </span> <span class="token-string">"${t("name")}"</span><span class="text-foreground">;</span>`,
 			indent: 1
 		},
 		{
 			num: 3,
-			content:
-				'<span class="token-property">role</span><span class="token-equals"> = </span> <span class="token-string">"Full-Stack Developer"</span><span class="text-foreground">;</span>',
+			content: `<span class="token-property">role</span><span class="token-equals"> = </span> <span class="token-string">"${t("role")}"</span><span class="text-foreground">;</span>`,
 			indent: 1
 		},
 		{
 			num: 4,
-			content:
-				'<span class="token-property">location</span><span class="token-equals"> = </span> <span class="token-string">"Brazil"</span><span class="text-foreground">;</span>',
+			content: `<span class="token-property">location</span><span class="token-equals"> = </span> <span class="token-string">"${t("location")}"</span><span class="text-foreground">;</span>`,
 			indent: 1
 		},
 		{
 			num: 5,
-			content:
-				'<span class="token-property">experience</span><span class="token-equals"> = </span> <span class="token-string">"2+ years"</span><span class="text-foreground">;</span>',
+			content: `<span class="token-property">experience</span><span class="token-equals"> = </span> <span class="token-string">"${t("experience")}"</span><span class="text-foreground">;</span>`,
 			indent: 1
 		},
 		{
 			num: 6,
-			content:
-				'<span class="token-property">availability</span><span class="token-equals"> = </span> <span class="token-string">"Open to opportunities"</span><span class="text-foreground">;</span>',
+			content: `<span class="token-property">availability</span><span class="token-equals"> = </span> <span class="token-string">"${t("availability")}"</span><span class="text-foreground">;</span>`,
 			indent: 1
 		},
 		{num: 7, content: "", indent: 0},
@@ -47,26 +52,22 @@ const CodeEditor = () => {
 		},
 		{
 			num: 9,
-			content:
-				'<span class="token-property">frontend</span><span class="text-foreground">:‎ ‎ <spa/ <span class="token-brace">[</span><span class="token-string">"Vue"</span><span class="text-foreground">,</span> <span class="token-string">"Angular"</span><span class="text-foreground">,</span>  <span class="token-string"><span class="token-string">"React"</span><span class="text-foreground">,</span> <span class="token-string">"TypeScript"</span><span class="text-foreground">,</span> <span class="token-string">"TailwindCSS"</span><span class="token-brace">]</span><span class="text-foreground">,</span>',
+			content: `<span class="token-property">frontend</span><span class="text-foreground">:‎ ‎ </span><span class="token-brace">[</span><span class="token-string">"${frontend.join('", "')}"</span><span class="token-brace">]</span><span class="text-foreground">,</span>`,
 			indent: 2
 		},
 		{
 			num: 10,
-			content:
-				'<span class="token-property">backend</span><span class="text-foreground">:‎ ‎ <spa/ <span class="token-brace">[</span><span class="token-string">"Node.js"</span><span class="text-foreground">,</span> <span class="token-string">"Express"</span><span class="token-brace">]</span><span class="text-foreground">,</span>',
+			content: `<span class="token-property">backend</span><span class="text-foreground">:‎ ‎ </span><span class="token-brace">[</span><span class="token-string">"${backend.join('", "')}"</span><span class="token-brace">]</span><span class="text-foreground">,</span>`,
 			indent: 2
 		},
 		{
 			num: 11,
-			content:
-				'<span class="token-property">databases</span><span class="text-foreground">:‎ ‎ </span><span class="token-brace">[</span><span class="token-string">"PostgreSQL"</span><span class="text-foreground">,</span> <span class="token-string">"MongoDB"</span><span class="token-brace">]</span><span class="text-foreground">,</span>',
+			content: `<span class="token-property">databases</span><span class="text-foreground">:‎ ‎ </span><span class="token-brace">[</span><span class="token-string">"${databases.join('", "')}"</span><span class="token-brace">]</span><span class="text-foreground">,</span>`,
 			indent: 2
 		},
 		{
 			num: 12,
-			content:
-				'<span class="token-property">tools</span><span class="text-foreground">:‎ ‎ </span> <span class="token-brace">[</span><span class="token-string">"Git"</span><span class="text-foreground">,</span> <span class="token-string">"Docker"</span><span class="text-foreground">,</span> <span class="token-string">"Linux"</span><span class="token-brace">]</span>',
+			content: `<span class="token-property">tools</span><span class="text-foreground">:‎ ‎ </span><span class="token-brace">[</span><span class="token-string">"${tools.join('", "')}"</span><span class="token-brace">]</span>`,
 			indent: 2
 		},
 		{
@@ -78,8 +79,7 @@ const CodeEditor = () => {
 		{num: 14, content: "", indent: 0},
 		{
 			num: 15,
-			content:
-				'<span class="token-property">softSkills</span><span class="token-equals"> = </span><span class="token-brace">[</span><span class="token-string">"Problem solving"</span><span class="text-foreground">, </span><span class="token-string">"Clear communication"</span><span class="text-foreground">, </span><span class="token-string">"Adaptability"</span><span class="token-brace">]</span><span class="text-foreground">;</span>',
+			content: `<span class="token-property">softSkills</span><span class="token-equals"> = </span><span class="token-brace">[</span><span class="token-string">"${softSkills.join('", "')}"</span><span class="token-brace">]</span><span class="text-foreground">;</span>`,
 			indent: 1
 		},
 		{num: 16, content: "", indent: 0},

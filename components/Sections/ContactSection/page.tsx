@@ -1,26 +1,37 @@
-
-
 import EmailSender from "@/components/EmailSender/EmailSender";
-import { AtIcon, GithubLogoIcon, MapPinIcon, PhoneIcon } from "@phosphor-icons/react/dist/ssr";
+import {
+	AtIcon,
+	GithubLogoIcon,
+	MapPinIcon,
+	PhoneIcon
+} from "@phosphor-icons/react/dist/ssr";
+import {getTranslations} from "next-intl/server";
 
-const ContactSection = () => {
+export default async function ContactSection({locale}: {locale: string}) {
+
+	console.log("Contact ",locale)
+
+    const t = await getTranslations({locale: locale, namespace: "contact"});
 
 	return (
 		<div className='flex justify-start flex-col items-center py-6 px-4 gap-6 min-h-[calc(80vh-72px)]'>
-			<p className='text-4xl'>Let&lsquo;s Connect</p>
+			<p className='text-4xl'>{t("title")}</p>
+
 			<div className='flex w-[100%] md:w-[40%]'>
-				<p className='text-center'>
-					I’m actively seeking opportunities as a developer. If my work fits
-					your team, feel free to reach out.
-				</p>
+				<p className='text-center'>{t("intro")}</p>
 			</div>
+
 			<div className='h-[100%] md:flex md:flex-row flex-col flex gap-6 md:gap-0 w-full justify-between'>
-				<div className='flex flex-col h-auto w-full md:w-[42%] lg:w-[40%]  justify-between gap-4'>
+				<div className='flex flex-col h-auto w-full md:w-[42%] lg:w-[40%] justify-start gap-4'>
 					<div className='flex justify-between'>
-						<p className='text-xl'>Contact Information</p>
+						<p className='text-xl'>{t("infoTitle")}</p>
 						<div className='flex gap-4'>
 							<div className='border-1 border-md rounded-md flex justify-center items-center p-2 card-new transition-all duration-300 cursor-pointer'>
-								<a href='https://www.linkedin.com/in/heron-lorena/'>
+								<a
+									href='https://www.linkedin.com/in/heron-lorena/'
+									target='_blank'
+									rel='noopener noreferrer'
+								>
 									<svg
 										xmlns='http://www.w3.org/2000/svg'
 										width='32'
@@ -40,39 +51,43 @@ const ContactSection = () => {
 								</a>
 							</div>
 							<div className='border-1 border-md rounded-md flex justify-center items-center p-2 card-new transition-all duration-300 cursor-pointer'>
-								<a href='https://github.com/pkill-preston'>
+								<a
+									href='https://github.com/pkill-preston'
+									target='_blank'
+									rel='noopener noreferrer'
+								>
 									<GithubLogoIcon size={32} />
 								</a>
 							</div>
 						</div>
 					</div>
+
 					<div className='flex flex-col gap-6'>
 						<div className='bg-card p-4 flex gap-4 items-center border rounded-lg card-new transition-all duration-300'>
 							<div className='border p-2 rounded-md'>
 								<AtIcon size={24} />
 							</div>
-							<p>heron.lorena@protonmail.com</p>
-						</div>
-						<div className='bg-card p-4 flex gap-4 items-center border rounded-lg card-new transition-all duration-300'>
-							<div className='border p-2 rounded-md'>
-								<MapPinIcon size={24} />
-							</div>
-							<p>+55 (12) 99664-7366</p>
+							<p>{t("email")}</p>
 						</div>
 						<div className='bg-card p-4 flex gap-4 items-center border rounded-lg card-new transition-all duration-300'>
 							<div className='border p-2 rounded-md'>
 								<PhoneIcon size={24} />
 							</div>
-							<p>Brazil, Sao Paulo</p>
+							<p>{t("phone")}</p>
+						</div>
+						<div className='bg-card p-4 flex gap-4 items-center border rounded-lg card-new transition-all duration-300'>
+							<div className='border p-2 rounded-md'>
+								<MapPinIcon size={24} />
+							</div>
+							<p>{t("location")}</p>
 						</div>
 					</div>
 				</div>
+
 				<div className='flex w-full md:w-[55%] border rounded-lg p-4'>
 					<EmailSender />
 				</div>
 			</div>
 		</div>
 	);
-};
-
-export default ContactSection;
+}
