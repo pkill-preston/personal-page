@@ -9,8 +9,6 @@ import {getTranslations} from "next-intl/server";
 
 export default async function ContactSection({locale}: {locale: string}) {
 
-	console.log("Contact ",locale)
-
     const t = await getTranslations({locale: locale, namespace: "contact"});
 
 	return (

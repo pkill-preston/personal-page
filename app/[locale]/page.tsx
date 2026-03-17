@@ -14,8 +14,6 @@ export default function Page({params} : {params: Promise<{locale: string}>}) {
 
 	setRequestLocale(locale);
 
-	console.log("page ", locale)
-
 	return (
 		<LocomotiveWrapper>
 			<div className='flex justify-center items-center'>
