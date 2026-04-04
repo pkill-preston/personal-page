@@ -27,7 +27,11 @@ export const metadata: Metadata = {
 	description:
 		"Web developer portfolio focused on modern web applications, performance and user experience.",
 
-	// SEO basics
+	verification: {
+		google:
+			"google-site-verification=7a4hy-G2H-dJUa9X5lvgWoekwYKFR6sxOeSVhdEGQWg"
+	},
+
 	keywords: [
 		"Frontend Developer",
 		"Next.js",
@@ -39,7 +43,6 @@ export const metadata: Metadata = {
 	authors: [{name: "Heron Lorena"}],
 	creator: "Heron Lorena",
 
-	// Open Graph (for Discord, WhatsApp, Facebook, etc.)
 	openGraph: {
 		title: "Heron Lorena",
 		description:
@@ -48,7 +51,7 @@ export const metadata: Metadata = {
 		siteName: "Heron Lorena - Web Developer",
 		images: [
 			{
-				url: "https://media.discordapp.net/attachments/962733860980949054/1483374214533742662/8OIVV4AAAAGSURBVAMAx9Qqy7Sl9y0AAAAASUVORK5CYII.png?ex=69ba5b64&is=69b909e4&hm=e5a89c305a7cb9048e86507ce8f2451cdde6849b1232cdafda490b3399e2d428&=&format=webp&quality=lossless&width=1199&height=748", // 1200x630 recommended
+				url: "https://heron-lorena.vercel.app/og.png",
 				width: 1200,
 				height: 630,
 				alt: "Heron Lorena Portfolio"
@@ -57,9 +60,8 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		type: "website"
 	},
-	// Canonical & i18n
 	alternates: {
-		canonical: "https://heron-lorena.vercel.app/pt",
+		canonical: "https://heron-lorena.vercel.app/",
 		languages: {
 			en: "https://heron-lorena.vercel.app/en",
 			pt: "https://heron-lorena.vercel.app/pt",
@@ -67,14 +69,12 @@ export const metadata: Metadata = {
 		}
 	},
 
-	// Crawlers
 	robots: {
 		index: true,
 		follow: true
 	},
 
-	// Optional but nice
-	metadataBase: new URL("https://yourdomain.com")
+	metadataBase: new URL("https://heron-lorena.vercel.app/")
 };
 
 export default async function RootLayout({

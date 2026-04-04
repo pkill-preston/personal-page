@@ -15,6 +15,9 @@ export default function ProjectsCard({payload}: Props) {
 
 	const t = useTranslations("projects");
 
+	console.log(payload)
+
+
 	return (
 		<>
 			<p className='text-4xl'>{t("title")}</p>
