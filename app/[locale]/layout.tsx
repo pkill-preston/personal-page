@@ -28,8 +28,7 @@ export const metadata: Metadata = {
 		"Web developer portfolio focused on modern web applications, performance and user experience.",
 
 	verification: {
-		google:
-			"google-site-verification=7a4hy-G2H-dJUa9X5lvgWoekwYKFR6sxOeSVhdEGQWg"
+		google: "OxCo5e8EgvyBPImm3lF2gA6Y_7S5PjgldnRBzqyzz1g"
 	},
 
 	keywords: [
