@@ -1,8 +1,19 @@
 import createMiddleware from "next-intl/middleware";
 import {routing} from "./i18n/routing";
+import {NextRequest} from "next/server";
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
 
-export const config = {
-	matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"]
-};
+export default function middleware(req: NextRequest) {
+	const {pathname} = req.nextUrl;
+
+	if (
+		pathname.startsWith("/_next") ||
+		pathname.startsWith("/api") ||
+		pathname.includes(".") 
+	) {
+		return;
+	}
+
+	return intlMiddleware(req);
+}

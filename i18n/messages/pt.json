@@ -8,6 +8,11 @@
     "languageSelector": {
         "selectLanguage": "Selecione seu idioma"
     },
+    "notFound": {
+        "title": "404",
+        "description": "Página não encontrada.",
+        "homeButton": "Início"
+    },
     "hero": {
         "im": "Me chamo",
         "name": "Heron",
