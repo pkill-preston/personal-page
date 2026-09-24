@@ -38,46 +38,44 @@ export default function ContactForm() {
 	}
 
 	if (sent) {
-		return <p className='text-lg'>{t("success")}</p>;
+		return <p className='text-lg text-center py-8'>{t("success")}</p>;
 	}
 
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className='flex flex-col justify-between gap-6 w-full'
+			className='flex flex-col gap-5 w-full'
 		>
-			<div className='flex flex-col gap-2'>
+			<div className='flex flex-col gap-1.5'>
 				<Label>{t("emailLabel")}</Label>
 				<Input
 					name='email'
 					type='email'
 					placeholder={t("emailPlaceholder")}
 					required
-					className='border p-2 rounded-lg'
 				/>
 			</div>
 
-			<div className='flex flex-col gap-2'>
+			<div className='flex flex-col gap-1.5'>
 				<Label>{t("subjectLabel")}</Label>
 				<Input
 					name='subject'
 					placeholder={t("subjectPlaceholder")}
 					required
-					className='border p-2 rounded-lg'
 				/>
 			</div>
 
-			<div className='flex flex-col gap-2'>
+			<div className='flex flex-col gap-1.5'>
 				<Label>{t("messageLabel")}</Label>
 				<Textarea
 					name='message'
 					placeholder={t("messagePlaceholder")}
 					required
-					className='border p-2 rounded-lg h-full'
+					className='min-h-[120px]'
 				/>
 			</div>
 
-			<Button type='submit' className='text-white p-2 rounded-lg'>
+			<Button type='submit' className='w-full'>
 				{loading ? t("sending") : t("submit")}
 			</Button>
 		</form>

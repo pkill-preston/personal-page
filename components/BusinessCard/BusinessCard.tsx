@@ -1,55 +1,38 @@
 "use client"
 
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 export const BusinessCard = () => {
 	const [isFlipped, setIsFlipped] = useState(false);
-	const [isTouch, setIsTouch] = useState(false);
-
-	useEffect(() => {
-		const media = window.matchMedia("(pointer: coarse)");
-		setIsTouch(media.matches);
-	}, []);
 
 	return (
-		<div className='perspective-1000 w-[100%] flex justify-center'>
+		<div className='perspective-1000 w-full max-w-md flex justify-center'>
 			<div
-				className={`relative  w-[100%] max-w-96 h-56 cursor-pointer transition-transform duration-500 transform-style-3d ${
-					isFlipped ? "rotate-y-180" : ""
+				className={`relative w-full h-56 cursor-pointer transition-transform duration-500 ${
+					isFlipped ? "[transform:rotateY(180deg)]" : ""
 				}`}
 				onClick={() => setIsFlipped(!isFlipped)}
-				style={{
-					transformStyle: "preserve-3d",
-					transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)"
-				}}
+				style={{transformStyle: "preserve-3d"}}
 			>
 				{/* Front */}
 				<div
-					className='absolute card-interactive bg-card border-1 rounded-lg card-new transition-all duration-300 overflow-hidden w-full h-full backface-hidden rounded-lg p-4 border flex flex-col items-center justify-around'
+					className='absolute card p-6 overflow-hidden w-full h-full [backface-visibility:hidden] flex flex-col items-center justify-center'
 					style={{backfaceVisibility: "hidden"}}
 				>
-					<h1
-						className='text-center text-4xl font-light tracking-[0.2em] font-serif  italic font-100 text-gray-300 uppercase'
-						style={{
-							textShadow:
-								"2px 2px 4px rgba(255,255,255,0.8), -1px -1px 2px rgba(0,0,0,0.1)"
-						}}
-					>
+					<h1 className='text-center text-3xl font-light tracking-[0.15em] font-serif italic text-muted-foreground uppercase'>
 						Heron Lorena
 					</h1>
 				</div>
 
+				{/* Back */}
 				<div
-					className='absolute card-interactive bg-card border-1 rounded-lg card-new transition-all duration-300 overflow-hidden w-full h-full backface-hidden rounded-lg border flex flex-col justify-around items-center p-6'
-					style={{
-						backfaceVisibility: "hidden",
-						transform: "rotateY(180deg)"
-					}}
+					className='absolute card p-6 overflow-hidden w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col justify-center items-center gap-4'
+					style={{backfaceVisibility: "hidden"}}
 				>
-					<div className='flex flex-col items-center gap-2'>
-						<p className='text-foreground text-2xl tracking-wider'>Developer</p>
+					<div className='flex flex-col items-center gap-1'>
+						<p className='text-foreground text-xl font-medium tracking-wider'>Developer</p>
 					</div>
-					<div className='space-y-2 text-center text-foreground text-sm'>
+					<div className='flex flex-col items-center gap-1 text-sm text-muted-foreground'>
 						<p>heron.lorena@protonmail.com</p>
 						<p>📍 São Paulo, Brazil</p>
 						<p>+55 (12) 99664-7366</p>

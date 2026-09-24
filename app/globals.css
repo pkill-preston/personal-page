@@ -1,4 +1,3 @@
-@import "locomotive-scroll/dist/locomotive-scroll.css";
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -8,35 +7,35 @@
 :root {
   --background: oklch(1.0000 0 0);
   --foreground: oklch(0.2697 0 0);
-  --card: oklch(1.0000 0 0);
+  --card: oklch(0.995 0.003 270);
   --card-foreground: oklch(0.2697 0 0);
-  --popover: oklch(1.0000 0 0);
+  --popover: oklch(0.995 0.003 270);
   --popover-foreground: oklch(0.2697 0 0);
   --primary: oklch(0.5296 0.1863 258.1459);
   --primary-foreground: oklch(1.0000 0 0);
-  --secondary: oklch(0.9686 0.0035 247.8590);
+  --secondary: oklch(0.965 0.006 265);
   --secondary-foreground: oklch(0.2697 0 0);
-  --muted: oklch(0.9696 0 0);
+  --muted: oklch(0.965 0.006 265);
   --muted-foreground: oklch(0.5547 0 0);
   --accent: oklch(0.9633 0.0154 255.0359);
   --accent-foreground: oklch(0.4430 0.1522 257.9241);
   --destructive: oklch(0.5409 0.2143 28.4788);
   --destructive-foreground: oklch(1.0000 0 0);
-  --border: oklch(0.8610 0 0);
-  --input: oklch(0.9234 0 0);
+  --border: oklch(0.91 0.01 265);
+  --input: oklch(0.91 0.01 265);
   --ring: oklch(0.5296 0.1863 258.1459);
   --chart-1: oklch(0.5296 0.1863 258.1459);
   --chart-2: oklch(0.6902 0.1481 162.3676);
   --chart-3: oklch(0.6683 0.1657 54.1917);
   --chart-4: oklch(0.5815 0.2477 311.2650);
   --chart-5: oklch(0.6057 0.2357 11.9397);
-  --sidebar: oklch(0.9848 0 0);
+  --sidebar: oklch(0.9848 0.005 270);
   --sidebar-foreground: oklch(0.3705 0 0);
   --sidebar-primary: oklch(0.5296 0.1863 258.1459);
   --sidebar-primary-foreground: oklch(1.0000 0 0);
   --sidebar-accent: oklch(0.9498 0.0109 255.0143);
   --sidebar-accent-foreground: oklch(0.4430 0.1522 257.9241);
-  --sidebar-border: oklch(0.9234 0 0);
+  --sidebar-border: oklch(0.9234 0.008 270);
   --sidebar-ring: oklch(0.5296 0.1863 258.1459);
   --font-sans: "Gabarito", "Inter", "Segoe UI", sans-serif;
   --font-serif: "Libre Caslon", ui-serif, serif;
@@ -61,37 +60,37 @@
 }
 
 .dark {
-  --background: oklch(0.2376 0 0);
+  --background: oklch(0.17 0.025 275);
   --foreground: oklch(0.9389 0 0);
-  --card: oklch(0.2697 0 0);
+  --card: oklch(0.22 0.02 275);
   --card-foreground: oklch(0.9389 0 0);
-  --popover: oklch(0.2697 0 0);
+  --popover: oklch(0.22 0.02 275);
   --popover-foreground: oklch(0.9389 0 0);
   --primary: oklch(0.7782 0.1158 252.5545);
   --primary-foreground: oklch(0.2074 0.0625 252.2461);
-  --secondary: oklch(0.3211 0 0);
+  --secondary: oklch(0.28 0.02 275);
   --secondary-foreground: oklch(0.9389 0 0);
-  --muted: oklch(0.3008 0 0);
+  --muted: oklch(0.25 0.015 275);
   --muted-foreground: oklch(0.7244 0 0);
   --accent: oklch(0.3148 0.1071 255.8956);
   --accent-foreground: oklch(0.8647 0.0685 252.0087);
   --destructive: oklch(0.5789 0.2217 27.8067);
   --destructive-foreground: oklch(1.0000 0 0);
-  --border: oklch(0.3705 0 0);
-  --input: oklch(0.3705 0 0);
+  --border: oklch(0.32 0.02 275);
+  --input: oklch(0.32 0.02 275);
   --ring: oklch(0.7782 0.1158 252.5545);
   --chart-1: oklch(0.7782 0.1158 252.5545);
   --chart-2: oklch(0.7750 0.1362 166.9055);
   --chart-3: oklch(0.8380 0.1371 82.1273);
   --chart-4: oklch(0.6863 0.1603 305.6668);
   --chart-5: oklch(0.6856 0.1898 352.1927);
-  --sidebar: oklch(0.2156 0 0);
+  --sidebar: oklch(0.21 0.018 275);
   --sidebar-foreground: oklch(0.8845 0 0);
   --sidebar-primary: oklch(0.7782 0.1158 252.5545);
   --sidebar-primary-foreground: oklch(0.2074 0.0625 252.2461);
-  --sidebar-accent: oklch(0.3211 0 0);
+  --sidebar-accent: oklch(0.28 0.02 275);
   --sidebar-accent-foreground: oklch(0.9619 0 0);
-  --sidebar-border: oklch(0.3411 0 0);
+  --sidebar-border: oklch(0.30 0.02 275);
   --sidebar-ring: oklch(0.7782 0.1158 252.5545);
   --font-sans: "Gabarito", "Inter", "Segoe UI", sans-serif;
   --font-serif: "Libre Caslon", ui-serif, serif;
@@ -111,10 +110,6 @@
   --shadow-lg: 0px 2px 6px 0px hsl(0 0% 0% / 0.15), 0px 4px 6px -1px hsl(0 0% 0% / 0.15);
   --shadow-xl: 0px 2px 6px 0px hsl(0 0% 0% / 0.15), 0px 8px 10px -1px hsl(0 0% 0% / 0.15);
   --shadow-2xl: 0px 2px 6px 0px hsl(0 0% 0% / 0.38);
-}
-
-.card{
-
 }
 
 @theme inline {
@@ -167,59 +162,188 @@
 	body {
 		@apply bg-background text-foreground;
 	}
-	/* === Code Editor Tokens === */
-
-	.token-keyword {
-		@apply text-purple-800 dark:text-pink-400;
-	}
-
-	.token-class {
-		@apply text-cyan-600 dark:text-green-400;
-	}
-
-	.token-property {
-		@apply text-cyan-600 dark:text-green-300;
-	}
-
-	.token-string {
-		@apply text-orange-700 dark:text-red-400;
-	}
-
-	.token-brace {
-		@apply text-blue-500 dark:text-yellow-400;
-	}
-
-	.token-punctuation {
-		@apply text-black dark:text-blue-500;
-	}
-
-	.token-equals {
-		@apply text-black dark:text-purple-600;
-	}
-
 }
 
 @layer components {
-  .card-interactive {
-    @apply shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]
-           transition
-           transition-all
-           duration-300
-           hover:-translate-y-[5px]
-           hover:-translate-y-1
-           hover:bg-blue-200/20
-           hover:shadow-xl;
+  .card {
+    @apply bg-card border rounded-lg transition-all duration-300;
   }
-
-  .card-new{
-    background-color: var(--card);
-    transition: border-color .3s, transform .3s, box-shadow .3s;
-    overflow: hidden;
-  }
-
-  .card-new:hover {
-        border-color: var(--ring);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 32px var(--color-primary);
-    }
 }
+
+/* Scroll-triggered animation base states */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.anim-fade-in {
+  opacity: 0;
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim-fade-in.is-visible {
+  opacity: 1;
+}
+
+.anim-scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim-scale-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.anim-slide-right {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.anim-slide-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delay helpers via inline style --delay */
+.anim-fade-up,
+.anim-fade-in,
+.anim-scale-in,
+.anim-slide-right {
+  transition-delay: var(--delay, 0ms);
+}
+
+/* Floating animation for CodeEditor */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse glow for accent elements */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.5296 0.1863 258.1459 / 0); }
+  50% { box-shadow: 0 0 20px 4px oklch(0.5296 0.1863 258.1459 / 0.15); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Button press effect */
+.btn-press:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
+}
+
+/* Card entrance stagger for grids */
+.stagger-grid > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stagger-grid.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-grid.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-grid.is-visible > *:nth-child(2) { transition-delay: 80ms; }
+.stagger-grid.is-visible > *:nth-child(3) { transition-delay: 160ms; }
+.stagger-grid.is-visible > *:nth-child(4) { transition-delay: 240ms; }
+.stagger-grid.is-visible > *:nth-child(5) { transition-delay: 320ms; }
+.stagger-grid.is-visible > *:nth-child(6) { transition-delay: 400ms; }
+
+/* Project card hover.
+   Unlayered and placed after the .stagger-grid rules so this transition
+   wins the cascade (same specificity, later source) and keeps both the
+   entrance fade (opacity/transform) and hover (border/shadow/translate/scale)
+   on one smooth transition. !important delay ensures hover reacts instantly
+   instead of inheriting the stagger nth-child delays. */
+.card-hover {
+  @apply bg-card border rounded-lg;
+  transition-property: opacity, transform, border-color, background-color,
+    box-shadow, translate, scale;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0ms !important;
+
+  &:hover {
+    @apply border-primary bg-card shadow-lg;
+    translate: 0 -4px;
+    scale: 1.01;
+  }
+}
+
+/* BusinessCard flip */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Rainbow border animation */
+@keyframes rainbow-border {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.rainbow-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.rainbow-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    #ff6b6b, #ffd93d, #6bcb77, #4d96ff, #9b59b6, #ff6b6b
+  );
+  background-size: 300% 100%;
+  animation: rainbow-border 4s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+/* Theme change crossfade.
+   Uses the View Transitions API (document.startViewTransition) from
+   ThemeToggler, which crossfades two GPU-composited snapshots instead of
+   animating colors on every element. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+

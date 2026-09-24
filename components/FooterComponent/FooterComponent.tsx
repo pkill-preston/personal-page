@@ -3,34 +3,35 @@
 import React from "react";
 import {useTranslations} from "next-intl";
 
-const FooterComponent = () => {
+const Footer = () => {
 	const t = useTranslations("footer");
 	const year = new Date().getFullYear();
 
 	return (
-		<div className='flex w-full justify-center items-center bg-card py-6 px-4'>
-			<div className='max-w-[72rem] px-4 flex md:flex-row flex-col items-center gap-2 md:justify-between justify-center w-full'>
-				<div className='flex items-end gap-2'>
-					<p>{t("copyright", {year})}</p>
-				</div>
-
+		<footer className='w-full bg-card border-t'>
+			<div className='max-w-[72rem] mx-auto px-4 md:px-6 py-6 flex flex-col md:flex-row items-center gap-4 md:justify-between anim-fade-in is-visible'>
+				<p className='text-sm text-muted-foreground'>{t("copyright", {year})}</p>
 				<div className='flex gap-4'>
 					<a
-						className='hover:text-[#7FBBFF]'
+						className='text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:translate-y-[-1px]'
 						href='https://github.com/pkill-preston'
+						target='_blank'
+						rel='noopener noreferrer'
 					>
 						Github
 					</a>
 					<a
-						className='hover:text-[#7FBBFF]'
+						className='text-sm text-muted-foreground hover:text-foreground transition-all duration-200 hover:translate-y-[-1px]'
 						href='https://www.linkedin.com/in/heron-lorena/'
+						target='_blank'
+						rel='noopener noreferrer'
 					>
 						Linkedin
 					</a>
 				</div>
 			</div>
-		</div>
+		</footer>
 	);
 };
 
-export default FooterComponent;
+export default Footer;

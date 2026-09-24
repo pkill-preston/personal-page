@@ -1,7 +1,19 @@
 "use client"
 
-import {HammerIcon, PaintBrushBroadIcon} from "@phosphor-icons/react";
-import {Badge} from "../ui/badge";
+import {
+	PaintBrushBroadIcon,
+	HammerIcon,
+	ArrowsOutCardinalIcon,
+	GitBranchIcon,
+	DesktopIcon,
+	GearIcon,
+	LightningIcon,
+	LayoutIcon,
+	PuzzlePieceIcon,
+	GlobeIcon,
+} from "@phosphor-icons/react";
+import type {IconProps} from "@phosphor-icons/react";
+import type {ComponentType} from "react";
 
 type IconType = "tools" | "frontEnd";
 
@@ -9,6 +21,17 @@ type Props = {
 	title: string;
 	items: string[];
 	icon: IconType;
+};
+
+const iconMap: Record<string, ComponentType<IconProps>> = {
+	"UI Libraries": LayoutIcon,
+	"SSR": GlobeIcon,
+	"Tailwind": PaintBrushBroadIcon,
+	"Design System": PuzzlePieceIcon,
+	"Linux": DesktopIcon,
+	"Scrum": ArrowsOutCardinalIcon,
+	"Git": GitBranchIcon,
+	"Agile": LightningIcon,
 };
 
 const BadgesCard = ({items, icon, title}: Props) => {
@@ -20,14 +43,28 @@ const BadgesCard = ({items, icon, title}: Props) => {
 	const Icon = icons[icon];
 
 	return (
-		<div className='card-interactive overflow-hidden flex gap-2 flex-col bg-card border-1 rounded-lg card-new transition-all duration-300 sm:w-[calc(25%-8px)] md:w-[calc(20%-8px)] lg:w-[calc(17.5%-8px)] xl:w-[calc(15%-8px)] w-[100%] p-4 transition-all duration-300'>
-			<div className='flex gap-2 items-center'>
-				<Icon size={32} />
-				<p className='text-center font-bold'>{title}</p>
+		<div className='card p-6 flex flex-col gap-4'>
+			<div className='flex items-center gap-3 pb-3 border-b'>
+				<div className='p-2 rounded-lg bg-primary/10 text-primary'>
+					<Icon size={20} />
+				</div>
+				<p className='text-lg font-semibold'>{title}</p>
 			</div>
-			<div className='flex flex-wrap gap-2'>
-				{items.map((element: string, index: number) => {
-					return <Badge key={index}>{element}</Badge>;
+			<div className='grid grid-cols-2 gap-2'>
+				{items.map((item, index) => {
+					const ItemIcon = iconMap[item] ?? GearIcon;
+					return (
+						<div
+							key={index}
+							className='flex items-center gap-2.5 px-3 py-2.5 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200 group'
+						>
+							<ItemIcon
+								size={16}
+								className='text-muted-foreground group-hover:text-primary transition-colors duration-200 shrink-0'
+							/>
+							<span className='text-sm font-medium truncate'>{item}</span>
+						</div>
+					);
 				})}
 			</div>
 		</div>

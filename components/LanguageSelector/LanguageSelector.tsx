@@ -12,7 +12,7 @@ import {useRouter} from "next/navigation";
 import {useLocale, useTranslations} from "next-intl";
 
 const languages = [
-	{flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", code: "en", label: "English"},
+	{flag: "🇬🇧", code: "en", label: "English"},
 	{flag: "🇧🇷", code: "pt", label: "Português"},
 	{flag: "🇪🇸", code: "es", label: "Español"}
 ];
@@ -32,34 +32,29 @@ const LanguageSelector = () => {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger>
-				<div className='relative group bg-card rounded-xl overflow-hidden'>
-					<div className='p-2 relative border rounded-full cursor-pointer overflow-hidden'>
-						<div className='absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300'></div>
-						<GlobeIcon size={18} />
-					</div>
+				<div className='p-2 rounded-full border hover:bg-muted hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer'>
+					<GlobeIcon size={16} />
 				</div>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent className='flex w-40'>
-				<DropdownMenuGroup className='flex w-40 p-2 flex-col'>
-					<DropdownMenuLabel className='flex justify-center'>
+			<DropdownMenuContent className='w-40'>
+				<DropdownMenuGroup className='flex flex-col gap-1 p-2'>
+					<DropdownMenuLabel className='text-center text-xs'>
 						{t("selectLanguage")}
 					</DropdownMenuLabel>
-					<div className="flex flex-col gap-2">
-						{languages.map((item, index) => {
-							return (
-								<div
-									onClick={() => handleChange(item.code)}
-									key={index}
-									className='group relative w-full overflow-hidden cursor-pointer rounded-lg border p-2 transition-all bg-black/0 group-hover:bg-black/10 duration-300 hover:scale-[1.02] active:scale-[0.98]'
-								>
-									<div className='absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300'></div>
-									<p className='flex items-center gap-2'>
-										{item.flag} {item.label}
-									</p>
-								</div>
-							);
-						})}
-					</div>
+					{languages.map((item, index) => (
+						<button
+							onClick={() => handleChange(item.code)}
+							key={index}
+							className={`w-full flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-all duration-200 cursor-pointer ${
+								locale === item.code
+									? "bg-primary/10 text-primary font-medium"
+									: "hover:bg-muted text-foreground hover:translate-x-0.5"
+							}`}
+						>
+							<span>{item.flag}</span>
+							<span>{item.label}</span>
+						</button>
+					))}
 				</DropdownMenuGroup>
 			</DropdownMenuContent>
 		</DropdownMenu>

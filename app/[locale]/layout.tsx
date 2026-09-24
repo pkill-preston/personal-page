@@ -7,6 +7,7 @@ import {getMessages, setRequestLocale} from "next-intl/server";
 
 import {Gabarito, JetBrains_Mono, Libre_Caslon_Text} from "next/font/google";
 import FooterComponent from "@/components/FooterComponent/FooterComponent";
+import {DevStateOverlay} from "@/components/DevStateOverlay";
 
 const gabarito = Gabarito({
 	variable: "--font-sans"
@@ -95,20 +96,20 @@ export default async function RootLayout({
 			suppressHydrationWarning
 			className={`${gabarito.variable} ${libreCaslon.variable} ${jetbrains.variable} antialiased`}
 		>
-			<body suppressHydrationWarning>
-				<ThemeProvider
-					attribute='class'
-					defaultTheme='system'
-					enableSystem
-					disableTransitionOnChange
-				>
-					<NextIntlClientProvider locale={locale} messages={messages}>
-						<NavBar />
-						{children}
-						<FooterComponent />
-					</NextIntlClientProvider>
-				</ThemeProvider>
-			</body>
+		<body suppressHydrationWarning>
+			<ThemeProvider
+				attribute='class'
+				defaultTheme='system'
+				enableSystem
+			>
+				<NextIntlClientProvider locale={locale} messages={messages}>
+					<NavBar />
+					{children}
+					<FooterComponent />
+				</NextIntlClientProvider>
+			</ThemeProvider>
+			{process.env.NODE_ENV === "development" && <DevStateOverlay />}
+		</body>
 		</html>
 	);
 }

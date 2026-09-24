@@ -7,8 +7,20 @@ export function cn(...inputs: ClassValue[]) {
 
 
 export async function getRepos() {
-	const repos = ["personal-page"];
-	const username = "pkill-preston";
+	const username = process.env.GITHUB_USERNAME;
+	const reposEnv = process.env.GITHUB_REPOS;
+
+	if (!username || !reposEnv) {
+		console.error("GITHUB_USERNAME and GITHUB_REPOS must be set in .env");
+		return [];
+	}
+
+	const repos = reposEnv
+		.split(",")
+		.map((r) => r.trim())
+		.filter(Boolean);
+
+	if (repos.length === 0) return [];
 
 	try {
 		const data = await Promise.all(

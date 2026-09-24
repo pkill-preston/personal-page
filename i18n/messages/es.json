@@ -73,6 +73,8 @@
             "spanishLevel": "A2"
         },
         "openToWork": "Disponible para oportunidades",
+        "available": "Disponible",
+        "openToWorkDescription": "Disponible para tiempo completo, freelance o colaboración",
         "frontend": {
             "title": "Frontend",
             "items": [
